@@ -1,0 +1,13 @@
+dependencies {
+    compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    compile 'org.springframework.cloud:spring-cloud-starter-config'
+    compile 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    compile 'org.springframework.cloud:spring-cloud-openfeign-core'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    compile 'io.springfox:springfox-swagger2'
+    compile 'org.springframework.cloud:spring-cloud-starter-sleuth'
+}
+
+group = 'pl.piomin.services'
+version = '1.0-SNAPSHOT'

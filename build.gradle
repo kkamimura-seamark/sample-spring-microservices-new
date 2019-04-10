@@ -1,0 +1,77 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.0.RELEASE'
+        springCloudVersion = 'Finchley.SR1'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+allprojects {
+    group = 'pl.piomin.services'
+    version = '1.0-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'io.spring.dependency-management'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    sourceCompatibility = '1.8'
+
+    def defaultEncoding = 'UTF-8'
+    tasks.withType(AbstractCompile).each { it.options.encoding = defaultEncoding }
+    tasks.withType(GroovyCompile).each { it.groovyOptions.encoding = defaultEncoding }
+
+    dependencyManagement {
+        imports {
+//            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+            mavenBom "org.springframework.boot:spring-boot-dependencies:${springCloudVersion}"
+        }
+        dependencies {
+
+            /* swagger */
+            dependency('io.springfox:springfox-swagger2:2.9.2') {
+                exclude('io.swagger:swagger-annotations')
+                exclude('io.swagger:swagger-models')
+            }
+
+
+            dependency('io.springfox:springfox-swagger-ui:2.9.2')
+            dependency("io.swagger:swagger-annotations:1.5.21")
+            dependency("io.swagger:swagger-models:1.5.21")
+
+            /* lombok */
+            dependency('org.projectlombok:lombok:1.18.+')
+
+            /* Apache Commons library */
+            dependency("org.apache.commons:commons-lang3:3.8")
+
+            /* junit jupiter */
+//            dependency('org.junit.platform:junit-platform-launcher:1.0.1')
+//            dependency('org.mockito:mockito-junit-jupiter:2.23.4')
+
+
+        }
+    }
+
+
+/*
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                from(components.java)
+            }
+        }
+    }
+*/
+}

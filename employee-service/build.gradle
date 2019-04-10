@@ -1,0 +1,11 @@
+dependencies {
+    compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.0.2.RELEASE'
+    compile 'org.springframework.cloud:spring-cloud-starter-config:2.0.2.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-web:2.0.6.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-actuator:2.0.6.RELEASE'
+    compile 'io.springfox:springfox-swagger2:2.9.2'
+    compile 'org.springframework.cloud:spring-cloud-starter-sleuth:2.0.2.RELEASE'
+}
+
+group = 'pl.piomin.services'
+version = '1.0-SNAPSHOT'

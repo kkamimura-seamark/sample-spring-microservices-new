@@ -1,0 +1,7 @@
+dependencies {
+    compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+    compile 'org.springframework.cloud:spring-cloud-starter-config'
+}
+
+group = 'pl.piomin.services'
+version = '1.0-SNAPSHOT'

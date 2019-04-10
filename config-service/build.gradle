@@ -1,0 +1,8 @@
+
+dependencies {
+    compile 'org.springframework.cloud:spring-cloud-config-server'
+}
+
+group = 'pl.piomin.services'
+version = '1.0-SNAPSHOT'
+
